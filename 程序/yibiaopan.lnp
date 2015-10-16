@@ -1,0 +1,10 @@
+"STARTUP.obj",
+"MAIN.obj",
+"12864.obj",
+"USER.obj",
+"DS18B20.obj",
+"24C0X.obj",
+"KEY.obj",
+"PWM.obj" 
+TO "yibiaopan" 
+RAMSIZE(256) 

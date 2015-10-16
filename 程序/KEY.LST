@@ -1,0 +1,94 @@
+C51 COMPILER V9.51   KEY                                                                   05/08/2015 22:55:53 PAGE 1   
+
+
+C51 COMPILER V9.51, COMPILATION OF MODULE KEY
+OBJECT MODULE PLACED IN KEY.OBJ
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE KEY.c LARGE OPTIMIZE(9,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          /**********************键盘函数文件*********************************
+   2          *  晶振:11.0592MHZ
+   3          ******************************************************************/
+   4          
+   5          /**********************包含文件*******************/
+   6          #include "KEY.h"
+   7          #include "PWM.h"
+   8          /*********************************全局变初始化***********************************/  
+   9          
+  10          /******************************************************************************/
+  11          /* 函数名称  : KEY_Scan                                                       */
+  12          /* 函数描述  : KEY扫描                                                        */
+  13          /* 输入参数  : Void                                                           */
+  14          /* 参数描述  : 无                                                             */
+  15          /* 返回值    : 无                                                             */
+  16          /******************************************************************************/  
+  17          void KEY_Scan(void)
+  18          {
+  19   1        if(KEY_1 == 0)//up
+  20   1        {
+  21   2          KEY_Delay(10);
+  22   2          if(KEY_1 == 0)
+  23   2          {
+  24   3            pwm_set_0 = 1000;
+  25   3          }
+  26   2          while(KEY_1 != 1);
+  27   2        }
+  28   1        if(KEY_2 == 0)//left
+  29   1        {
+  30   2          KEY_Delay(10);
+  31   2          if(KEY_2 == 0)
+  32   2          {
+  33   3            pwm_set_0 = 2000;
+  34   3          }
+  35   2          while(KEY_2 != 1);
+  36   2        }
+  37   1        if(KEY_3 == 0)//right
+  38   1        {
+  39   2          KEY_Delay(10);
+  40   2          if(KEY_3 == 0)
+  41   2          {
+  42   3            pwm_set_0 = 5000;
+  43   3          }
+  44   2          while(KEY_3 != 1);
+  45   2        }
+  46   1        if(KEY_4 == 0)//down
+  47   1        {
+  48   2          KEY_Delay(10);
+  49   2          if(KEY_4 == 0)
+  50   2          {
+  51   3            pwm_set_0 = 9000;
+  52   3          }
+  53   2          while(KEY_4 != 1);
+  54   2        }
+  55   1      }
+C51 COMPILER V9.51   KEY                                                                   05/08/2015 22:55:53 PAGE 2   
+
+  56          
+  57          /******************************************************************************/
+  58          /* 函数名称  : KEY_Delay                                                      */
+  59          /* 函数描述  : KEY延时                                                        */
+  60          /* 输入参数  : Void                                                           */
+  61          /* 参数描述  : 无                                                             */
+  62          /* 返回值    : 无                                                             */
+  63          /******************************************************************************/
+  64          void KEY_Delay(uint xms)
+  65          {
+  66   1        uchar i;
+  67   1        for( ; xms > 0; xms--)
+  68   1          for(i = 110; i > 0; i--);
+  69   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    126    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

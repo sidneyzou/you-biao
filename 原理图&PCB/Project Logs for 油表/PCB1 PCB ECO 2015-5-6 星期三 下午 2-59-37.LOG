@@ -1,0 +1,10 @@
+Added Component: Designator=(DIP-8)
+Added Pin To Net: NetName=GND Pin=-1
+Added Pin To Net: NetName=GND Pin=-2
+Added Pin To Net: NetName=GND Pin=-3
+Added Pin To Net: NetName=GND Pin=-4
+Added Pin To Net: NetName=P21 Pin=-5
+Added Pin To Net: NetName=P20 Pin=-6
+Added Pin To Net: NetName=GND Pin=-7
+Added Pin To Net: NetName=VCC Pin=-8
+Added Member To Class: ClassName=Sheet1 Member=Component  8PIN
